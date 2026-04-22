@@ -343,7 +343,7 @@ void test_strategy(string file_basename, string domain_name, RBFFDOptions rbffd_
 {
     // set input file for polyhedron
     std::stringstream OFF_File_base;
-    OFF_File_base << "/home/michael/Dokumente/Programming/TEST/OseenRBFFDH2Lib/Tests/OFF_Files/" << domain_name << ".off";
+    OFF_File_base << "OFF_Files/" << domain_name << ".off";
     string OFF_file = OFF_File_base.str();
     PolyhedronShape<Vec3d> shape = PolyhedronShape<Vec3d>::fromOFF(OFF_file);
 
@@ -427,13 +427,6 @@ void test_strategy(string file_basename, string domain_name, RBFFDOptions rbffd_
         rootv = rootv_co_dd;
     }
     auto t_prcd_setup_end = high_resolution_clock::now();
-
-    if (rootv->sons == 3)
-        prn(rootv->son[2]->size);
-    if (rootv->son[0]->sons == 3)
-        prn(rootv->son[0]->son[2]->size);
-    if (rootv->son[1]->sons == 3)
-        prn(rootv->son[1]->son[2]->size);
   
     // H2Lib conversions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     pspmatrix mat_h2 = matMM2HOseen(mat, dc.N_ui+dc.N_uneu, dc.N_p); // convert to H2Lib-Sparsematrix format

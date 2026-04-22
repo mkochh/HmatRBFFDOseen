@@ -25,6 +25,7 @@ __pycache__
 Tests/*
 !Tests/*.cpp
 !Tests/CMakeLists.txt
+!Tests/OFF_Files/
 
 # Exclude vscode settings
 .vscode

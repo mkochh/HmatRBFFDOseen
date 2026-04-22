@@ -95,7 +95,7 @@ void test_strategy(string file_basename, string domain_name, RBFFDOptions rbffd_
 {
     // set input file for polyhedron
     std::stringstream OFF_File_base;
-    OFF_File_base << "/home/michael/Dokumente/Programming/TEST/OseenRBFFDH2Lib/Tests/OFF_Files/" << domain_name << ".off";
+    OFF_File_base << "OFF_Files/" << domain_name << ".off";
     string OFF_file = OFF_File_base.str();
     PolyhedronShape<Vec3d> shape = PolyhedronShape<Vec3d>::fromOFF(OFF_file);
 
